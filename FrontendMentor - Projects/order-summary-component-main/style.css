@@ -1,0 +1,209 @@
+:root {
+    --paleBlue: hsl(225, 100%, 94%);
+    --brightBlue: hsl(245, 75%, 52%);
+    --white: white;
+    --desaturatedBlue: hsl(224, 23%, 55%);
+    --veryPaleBlue: hsl(225, 100%, 98%);
+    --black: black;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    flex-direction: column;
+    background-color: var(--paleBlue);
+
+}
+
+main {
+    width: 90%;
+    margin: 0 auto;
+    height: 90%;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-card {
+    background-color: var(--white);
+    width: 100%;
+    height: auto;
+    border-radius: 5vw;
+    text-align: center;
+}
+
+.first-part {
+    height: 20%;
+}
+
+.hero-img {
+    width: 100%;
+    border-radius: 5vw 5vw 0 0;
+}
+
+.second-part {
+    width: 100%;
+    padding: 0 5vw;
+}
+
+.order-summary {
+    font-size: 6vw;
+}
+
+.order-description {
+    font-size: 4vw;
+    color: var(--desaturatedBlue);
+}
+
+.order-plan {
+    background-color: var(--veryPaleBlue);
+    border-radius: 3vw;
+    padding: 4vw;
+    justify-content: space-between;
+}
+
+.music {
+    width: 10vw;
+}
+
+.annualplan-price {
+    flex-direction: column;
+    font-size: 3.5vw;
+}
+
+.annual-plan {
+    margin: 0;
+}
+
+.p-59-year {
+    margin: 0;
+    color: var(--desaturatedBlue);
+    font-weight: lighter;
+}
+
+.change {
+    font-size: 4vw;
+}
+
+.change:hover {
+    color: hsla(245, 75%, 52%, 0.7);
+    text-decoration: none;
+}
+
+.buttons {
+    flex-direction: column;
+    padding: 5vw 0;
+}
+
+.buttons>button {
+    width: 100%;
+    padding: 4vw 0;
+    border: none;
+    border-radius: 2vw;
+    font-size: 5vw;
+    cursor: pointer;
+}
+
+.payment-btn {
+    background-color: var(--brightBlue);
+    color: var(--white);
+    box-shadow: 5px 10px 10px hsl(224, 23%, 55%);
+    z-index: 0;
+}
+
+.order-btn {
+    background-color: var(--white);
+    color: var(--desaturatedBlue);
+    font-weight: bold;
+}
+
+.payment-btn:hover {
+    background-color: hsla(245, 75%, 52%, 0.7);
+
+}
+
+.order-btn:hover {
+    color: var(--black);
+}
+
+.second-part-margin-bottom {
+    margin-bottom: 10vw;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 40rem) {
+    main {
+        width: 25%;
+        height: auto;
+    }
+
+    .main-card {
+        background-color: var(--white);
+        border-radius: 2vw;
+    }
+
+    .hero-img {
+        width: 100%;
+        border-radius: 2vw 2vw 0 0;
+    }
+
+    .second-part {
+        padding: 0 2.5vw;
+    }
+
+    .order-summary {
+        font-size: 2vw;
+    }
+
+    .order-description {
+        font-size: 1vw;
+    }
+
+    .order-plan {
+        border-radius: 1vw;
+        padding: 1vw;
+    }
+
+    .music {
+        width: 3vw;
+    }
+
+    .annualplan-price {
+        font-size: 0.8vw;
+    }
+
+    .change {
+        font-size: 1vw;
+    }
+
+    .buttons {
+        padding: 0.5vw 0;
+    }
+
+    .buttons>button {
+        padding: 1vw 0;
+        border-radius: 0.8vw;
+        font-size: 1vw;
+    }
+
+    .second-part-margin-bottom {
+        margin-bottom: 2vw;
+    }
+
+}

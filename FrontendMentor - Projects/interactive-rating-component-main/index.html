@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: hsl(216, 12%, 8%);
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    h1 {
+      color: white;
+    }
+
+    p {
+      color: hsl(216, 12%, 54%);
+      font-size: 15px;
+    }
+
+    .star {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-color: hsl(213, 19%, 18%);
+    }
+
+    .rate {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .ratings {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: hsl(217, 12%, 63%);
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-color: hsl(213, 19%, 18%);
+    }
+
+    .ratings:hover {
+      background-color: hsl(217, 12%, 63%);
+      color: white;
+    }
+
+    .ratings:active {
+      background-color: hsl(25, 97%, 53%);
+    }
+
+    .card {
+      background-color: hsl(213, 19%, 18%);
+      background-image: radial-gradient(farthest-corner at 50% 0%, hsl(213, 19%, 18%), hsl(218, 15%, 11%));
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 12%;
+      height: 350px;
+      width: 350px;
+      border-radius: 30px;
+    }
+
+    button {
+      color: white;
+      margin-top: 10%;
+      padding: 5%;
+      background-color: hsl(25, 97%, 53%);
+      width: 100%;
+      border-radius: 50px;
+    }
+
+    button:active {
+      background-color: white;
+      color: hsl(25, 97%, 53%);
+    }
+
+    .selected {
+      background-color: hsl(25, 97%, 53%);
+      color: white;
+    }
+
+    .card2 {
+      background-color: hsl(213, 19%, 18%);
+      background-image: radial-gradient(farthest-corner at 50% 0%, hsl(213, 19%, 18%), hsl(218, 15%, 11%));
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      margin-top: 12%;
+      height: 350px;
+      width: 350px;
+      border-radius: 30px;
+    }
+
+    .outOf5 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      height: 30px;
+      width: 170px;
+      background-color: hsl(213, 19%, 18%);
+      color: hsl(25, 97%, 53%);
+      border-radius: 240px;
+    }
+
+    .outOf5>p {
+      color: hsl(25, 97%, 53%);
+    }
+
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Rating state start -->
+  <div class="card" id="card1">
+    <span class="star">
+      <img src="images/icon-star.svg" alt="">
+    </span>
+    <div>
+      <h1>How did we do? </h1>
+      <p>Please let us know how we did with your support request. All feedback is appreciated to help us
+        improve our offering!</p>
+    </div>
+    <div class="rate">
+      <span class="ratings">1</span>
+      <span class="ratings">2</span>
+      <span class="ratings">3</span>
+      <span class="ratings">4</span>
+      <span class="ratings">5</span>
+    </div>
+    <div><button onclick="hide()">SUBMIT</button></div>
+  </div>
+  <div class="card2 hide">
+    <img src="images/illustration-thank-you.svg" alt="">
+    <div class="outOf5">
+      <p class="selectedRate"></p>
+    </div>
+    <h1>Thank You</h1>
+    <p>We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in
+      touch!</p>
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>
