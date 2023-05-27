@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+</head>
+
+<body>
+  <main class="main">
+    <div class="card">
+      <div class="image-design">
+        <picture class="img-background">
+          <source src="images/bg-pattern-mobile.svg" media="(max-width: 600px)">
+          <source src="images/bg-pattern-desktop.svg">
+          <img src="images/bg-pattern-desktop.svg" alt="pattern">
+        </picture>
+        <picture class="woman-online">
+          <source src="images/illustration-woman-online-mobile.svg" media="(max-width: 600px)">
+          <source src="images/illustration-woman-online-desktop.svg">
+          <img src="images/illustration-woman-online-desktop.svg" alt="illustration-woman-online-desktop">
+        </picture>
+        <!--<img class="img-background" src="images/bg-pattern-desktop.svg" alt="">
+        <img class="woman-online-desktop" src="images/illustration-woman-online-desktop.svg" alt="">-->
+        <img class="box-desktop" src="images/illustration-box-desktop.svg" alt="box">
+      </div>
+      <div class="faq">
+        <h1><strong>FAQ</strong></h1>
+        <h4>How many team members can I invite? <img class="arrows" id="arrow1" src="images/icon-arrow-down.svg" alt="">
+        </h4>
+        <p class="answer hide" id="asnwer1">You can invite up to 2 additional users on the Free plan. There is no
+          limit
+          on
+          team members for the Premium plan.</p>
+        <hr>
+        <h4>What is the maximum file upload size?<img class="arrows" id="arrow2" src="images/icon-arrow-down.svg"
+            alt=""></h4>
+        <p class="answer hide" id="asnwer2">No more than 2GB. All files in your account must fit your allotted storage
+          space.</p>
+        <hr>
+        <h4>How do I reset my password?<img class="arrows" id="arrow3" src="images/icon-arrow-down.svg" alt=""></h4>
+        <p class="answer hide" id="asnwer3">Click “Forgot password” from the login page or “Change password” from your
+          profile page.
+          A reset link will be emailed to you.</p>
+        <hr>
+        <h4>Can I cancel my subscription?<img class="arrows" id="arrow4" src="images/icon-arrow-down.svg" alt=""></h4>
+        <p class="answer hide" id="asnwer4">Yes! Send us a message and we’ll process your request no questions asked.
+        </p>
+        <hr>
+        <h4>Do you provide additional support?<img class="arrows" id="arrow5" src="images/icon-arrow-down.svg" alt="">
+        </h4>
+        <p class="answer hide" id="asnwer5"> Chat and email support is available 24/7. Phone lines are open during
+          normal business
+          hours.
+        </p>
+        <hr>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Lucas</a>.
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

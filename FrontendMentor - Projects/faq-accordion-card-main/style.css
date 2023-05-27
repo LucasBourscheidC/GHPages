@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  body {
+    height: 100vh;
+    margin: 0;
+  }
+
+  .main {
+    background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: light;
+  }
+
+  .card {
+    display: flex;
+    height: 500px;
+    width: 900px;
+    padding-right: 5%;
+    background-color: white;
+    border-radius: 20px;
+  }
+
+  .image-design {
+    position: relative;
+    width: 60%;
+  }
+
+  .img-background {
+    z-index: 0;
+    position: absolute;
+    top: -60%;
+    right: 80px;
+    clip: rect(300px, 1000px, 800px, 575px);
+    clip: rect();
+  }
+
+  .faq {
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 40%;
+  }
+
+  p {
+    font-size: 0.8rem;
+    padding-right: 10%;
+    color: hsl(237, 12%, 33%);
+  }
+
+  .arrows {
+    cursor: pointer;
+    height: 10px;
+    position: absolute;
+    top: 30%;
+    right: 5%;
+  }
+
+  hr {
+    border: none;
+    height: 1px;
+    background-color: hsl(240, 5%, 91%);
+  }
+
+  h4 {
+    position: relative;
+    color: hsl(237, 12%, 33%);
+    font-weight: lighter;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .woman-online {
+    position: absolute;
+    z-index: 1;
+    top: 20%;
+    left: -80px;
+    clip: rect(0px, 1000px, 800px, 80px);
+  }
+
+  .transform-arrow {
+    transform: rotate(180deg);
+  }
+
+  .box-desktop {
+    position: absolute;
+    top: 47%;
+    left: -92px;
+    z-index: 2;
+  }
+
+  @media only screen and (max-width: 600px) {
+
+    .card {
+      flex-direction: column;
+      height: 100vh;
+      width: 70%;
+      margin-top: 100px;
+      margin-left: 10px;
+      margin-right: 10px;
+      padding-right: 5%;
+      background-color: white;
+      border-radius: 20px;
+    }
+
+    .image-design {
+      height: 10%;
+    }
+
+    .img-background {
+      top: -20px;
+      left: 25%;
+      position: relative;
+      content: url("images/bg-pattern-mobile.svg");
+    }
+
+    .woman-online {
+      top: -190px;
+      left: 40%;
+      width: 100%;
+      content: url("images/illustration-woman-online-mobile.svg");
+      position: relative;
+    }
+
+
+    .box-desktop {
+      display: none;
+    }
+
+    .faq {
+      width: 95%;
+      height: 90%;
+      font-size: 15px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .answer {
+      font-size: 13px;
+    }
+
+  }
