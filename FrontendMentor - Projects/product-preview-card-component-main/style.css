@@ -29,7 +29,7 @@ main {
 
 .first-card {
     width: auto;
-    height: 40%;
+    height: 50%;
 }
 
 .second-card {
@@ -57,8 +57,9 @@ main {
 }
 
 .img-perfume {
+    height: auto;
     width: 100%;
-    border-radius: 15px;
+    border-radius: 15px 15px 0 0;
 }
 
 .perfume {
@@ -97,6 +98,7 @@ button:active {
 
 .cart {
     margin-right: 0.5rem;
+    font-weight: bold;
 }
 
 @media (min-width:600px) {
@@ -124,6 +126,7 @@ button:active {
 
     .img-perfume {
         height: auto;
+        border-radius: 15px 0 0 15px;
         content: url(images/image-product-desktop.jpg);
     }
 
