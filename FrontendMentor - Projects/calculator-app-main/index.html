@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -20,39 +20,45 @@
       <div class="header">
         <h2>calc</h2>
         <div class="themes">
-          <p class="1">1</p>
-          <p class="2">2</p>
-          <p class="3">3</p>
+          <div class="themes-numbers">
+            <p class="1">1</p>
+            <p class="2">2</p>
+            <p class="3">3</p>
+          </div>
           <h6>THEME</h6>
-          <div>
-            <button></button>
+          <div class="container-themes-button">
+            <button class="themes-button"></button>
           </div>
         </div>
       </div>
-      <div class="display">345345346,32534</div>
+      <div class="container-display">
+        <h1 class="display">
+          0
+        </h1>
+      </div>
       <div class="container-commands">
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>DEL</button>
+        <button class="button-number" id="7">7</button>
+        <button class="button-number" id="8">8</button>
+        <button class="button-number" id="9">9</button>
+        <button id="del">DEL</button>
 
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>+</button>
+        <button class="button-number" id="4">4</button>
+        <button class="button-number" id="5">5</button>
+        <button class="button-number" id="6">6</button>
+        <button class="button-arithmetic" id="sum">+</button>
 
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>-</button>
+        <button class="button-number" id="1">1</button>
+        <button class="button-number" id="2">2</button>
+        <button class="button-number" id="3">3</button>
+        <button class="button-arithmetic" id="subtraction">-</button>
 
-        <button>.</button>
-        <button>0</button>
-        <button>/</button>
-        <button>X</button>
+        <button id="float">.</button>
+        <button class="button-number" id="0">0</button>
+        <button class="button-arithmetic" id="division">/</button>
+        <button class="button-arithmetic" id="multiplication">X</button>
         
-        <button>reset</button>
-        <button>=</button>
+        <button id="reset">reset</button>
+        <button id="result">=</button>
 
       </div>
     </div>
@@ -63,5 +69,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  <script type="module" src="index.js"></script>
 </body>
 </html>
