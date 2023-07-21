@@ -1,7 +1,62 @@
 *{
     box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
 }
 body{
+    --main-background: hsl(222, 26%, 31%);
+    --keypad-background: hsl(223, 31%, 20%);
+    --screen-background: hsl(224, 36%, 15%);
+
+    --del-reset-background: hsl(225, 21%, 49%);
+    --del-reset-shadow: hsl(224, 28%, 35%);
+    --result-background: hsl(6, 63%, 50%);
+    --result-shadow: hsl(6, 70%, 34%);
+    --buttons-background: hsl(30, 25%, 89%);
+    --buttons-shadow: hsl(28, 16%, 65%);
+    
+    --buttons-text: hsl(221, 14%, 31%);
+    --header-display-text: white;
+    --text: white;
+
+    background-color: var(--main-background);
+    margin: 0;
+}
+body.white-theme{
+    --main-background: hsl(0, 0%, 90%);
+    --keypad-background: hsl(0, 5%, 81%);
+    --screen-background: hsl(0, 0%, 93%);
+
+    --del-reset-background: hsl(185, 42%, 37%);
+    --del-reset-shadow: hsl(185, 58%, 25%);
+    --result-background: hsl(25, 98%, 40%);
+    --result-shadow: hsl(25, 99%, 27%);
+    --buttons-background: hsl(45, 7%, 89%);
+    --buttons-shadow: hsl(35, 11%, 61%);
+    
+    --buttons-text: hsl(60, 10%, 19%);
+    --header-display-text: hsl(60, 10%, 19%);
+    --text: hsl(0, 0%, 100%);
+
+    background-color: var(--main-background);
+    margin: 0;
+}
+body.purple-theme{
+    --main-background: hsl(268, 75%, 9%):
+    --keypad-background: hsl(268, 71%, 12%);
+    --screen-background: hsl(268, 71%, 12%);
+
+    --del-reset-background: hsl(281, 89%, 26%);
+    --del-reset-shadow: hsl(285, 91%, 52%);
+    --result-background: hsl(176, 100%, 44%);
+    --result-shadow: hsl(177, 92%, 70%);
+    --buttons-background: hsl(268, 47%, 21%);
+    --buttons-shadow: hsl(290, 70%, 36%);
+    
+    --buttons-text: hsl(52, 100%, 62%);
+    --header-display-text: hsl(52, 100%, 62%);
+    --text: white;
+
+    background-color: hsl(268, 75%, 9%);
     margin: 0;
 }
 main{
@@ -10,6 +65,7 @@ main{
 .container{
     display: flex;
     flex-direction: column;
+    row-gap: 25px;
 }
 .header{
     display: flex;
@@ -17,7 +73,7 @@ main{
     align-items: center;
     justify-content: space-between;
 }
-.themes{
+.container-themes{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -25,26 +81,96 @@ main{
     grid-column: 2;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
 }
 .container-themes-button{
-    background-color: hsl(223, 31%, 20%);
+    background-color: var(--keypad-background);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    border-radius: 50px;
+    padding: 5px;
+    width: 80px;
 }
 .themes-button{
+    cursor: pointer;
+    border: none;
+    background-color: var(--result-background);
     grid-column: 1;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
 }
 .container-display{
-    background-color: hsl(224, 36%, 15%);
-    color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px;
+    background-color: var(--screen-background);
+    color: var(--header-display-text);
 }
-.container-commands{
+.display{
+    overflow-y: hidden;
+    color: var(--header-display-text);
+}
+.container-buttons{
+    border-radius: 10px;
+    background-color: var(--keypad-background);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 20px;
+    grid-gap: 15px 10px;
+    grid-auto-rows: 70px;
 }
+.button{
+    border-radius: 6px;
+}
+.button:active {
+    transform: scale(0.95); /* Reduz a escala do botão quando pressionado */
+  }
 #reset{
     grid-column: span 2;
 }
 #result{
     grid-column: span 2;
+}
+.button{
+    border: none;
+    background-color: var(--buttons-background);
+    color: var(--buttons-text);
+    font-size: 30px;
+    box-shadow: 0 5px 1px var(--buttons-shadow);
+}
+#del, #reset{
+    background-color: var(--del-reset-background);
+    color: var(--text);
+    font-weight:bold;
+    box-shadow: 0 5px 1px var(--del-reset-shadow);
+}
+#result{
+    background-color: var(--result-background);
+    color: var(--text);
+    box-shadow: 0 5px 1px var(--result-shadow);
+}
+.header-text{
+    color: var(--header-display-text);
+}
+#theme{
+    align-self: center;
+    letter-spacing: 2px;
+    margin: 0;
+    font-size: 12px;
+}
+
+@media only screen and (min-width: 600px) {
+    main{
+        padding: 5% 35%;
+    }
+    .container-buttons{
+        padding: 30px;
+        grid-gap: 35px 30px;
+        grid-auto-rows: 70px;
+    }
+    .button{
+        border-radius: 15px;
+    }
 }

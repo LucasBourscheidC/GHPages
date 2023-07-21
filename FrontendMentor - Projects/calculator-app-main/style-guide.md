@@ -19,7 +19,7 @@ The designs were created to the following widths:
 
 #### Keys
 
-- Desaturated dark blue (key background): hsl(225, 21%, 49%)
+- Desaturated dark blue (rkey backgound): hsl(225, 21%, 49%)
 - Desaturated dark blue (key shadow): hsl(224, 28%, 35%)
 
 - Red (key background, toggle): hsl(6, 63%, 50%)

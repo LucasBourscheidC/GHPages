@@ -6,6 +6,9 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Manrope:wght@400;700&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -18,14 +21,14 @@
   <main>
     <div class="container">
       <div class="header">
-        <h2>calc</h2>
-        <div class="themes">
+        <h1 class="header-text">calc</h1>
+        <div class="container-themes">
           <div class="themes-numbers">
-            <p class="1">1</p>
-            <p class="2">2</p>
-            <p class="3">3</p>
+            <p class="header-text 1">1</p>
+            <p class="header-text 2">2</p>
+            <p class="header-text 3">3</p>
           </div>
-          <h6>THEME</h6>
+          <h6 class="header-text" id="theme">THEME</h6>
           <div class="container-themes-button">
             <button class="themes-button"></button>
           </div>
@@ -36,29 +39,29 @@
           0
         </h1>
       </div>
-      <div class="container-commands">
-        <button class="button-number" id="7">7</button>
-        <button class="button-number" id="8">8</button>
-        <button class="button-number" id="9">9</button>
-        <button id="del">DEL</button>
+      <div class="container-buttons">
+        <button class="button button-number" id="7">7</button>
+        <button class="button button-number" id="8">8</button>
+        <button class="button button-number" id="9">9</button>
+        <button class="button" id="del">DEL</button>
 
-        <button class="button-number" id="4">4</button>
-        <button class="button-number" id="5">5</button>
-        <button class="button-number" id="6">6</button>
-        <button class="button-arithmetic" id="sum">+</button>
+        <button class="button button-number" id="4">4</button>
+        <button class="button button-number" id="5">5</button>
+        <button class="button button-number" id="6">6</button>
+        <button class="button button-arithmetic" id="sum">+</button>
 
-        <button class="button-number" id="1">1</button>
-        <button class="button-number" id="2">2</button>
-        <button class="button-number" id="3">3</button>
-        <button class="button-arithmetic" id="subtraction">-</button>
+        <button class="button button-number" id="1">1</button>
+        <button class="button button-number" id="2">2</button>
+        <button class="button button-number" id="3">3</button>
+        <button class="button button-arithmetic" id="subtraction">-</button>
 
-        <button id="float">.</button>
-        <button class="button-number" id="0">0</button>
-        <button class="button-arithmetic" id="division">/</button>
-        <button class="button-arithmetic" id="multiplication">X</button>
+        <button class="button" id="float">.</button>
+        <button class="button button-number" id="0">0</button>
+        <button class="button button-arithmetic" id="division">/</button>
+        <button class="button button-arithmetic" id="multiplication">x</button>
         
-        <button id="reset">reset</button>
-        <button id="result">=</button>
+        <button class="button" id="reset">reset</button>
+        <button class="button" id="result">=</button>
 
       </div>
     </div>
