@@ -37,7 +37,6 @@ const newCharacter = (character)=>{
 
 const handleArithmeticInput = (arithmeticInput) => {
     const arithmeticIndex = changeArithmetic();
-    console.log(arithmeticIndex);
     if(typedNumber[0] === "0")
     {
         if(arithmeticInput === "-")
@@ -47,10 +46,8 @@ const handleArithmeticInput = (arithmeticInput) => {
         }
         return;
     }
-    else if(arithmeticIndex === 0){
-        console.log("ETANTANDO1")
+    else if(typedNumber === 0){
         operationIndex = arithmeticIndex + 1;
-        console.log("opreoperationIndex 44444", operationIndex)
         typedNumber += arithmeticInput;
         changeDisplay(typedNumber);
         return;
@@ -59,9 +56,7 @@ const handleArithmeticInput = (arithmeticInput) => {
     {
         if(typedNumber[arithmeticIndex] === "+")
         {
-            console.log("ETANTANDO2")
             operationIndex = arithmeticIndex + 1;
-            console.log("opreoperationIndex 2", operationIndex)
             typedNumber = typedNumber.slice(0, arithmeticIndex) + arithmeticInput;
             changeDisplay(typedNumber);
         }
@@ -69,14 +64,11 @@ const handleArithmeticInput = (arithmeticInput) => {
         typedNumber[arithmeticIndex] === "/") &&
         isNaN(typedNumber[typedNumber.length-1]))
         {
-            console.log("ETANTANDO3")
             typedNumber += arithmeticInput;
             changeDisplay(typedNumber);
         }
         else if (!(isNaN(typedNumber[arithmeticIndex]))){
-            console.log("ETANTANDO4")
             operationIndex = arithmeticIndex + 1;
-            console.log("opreoperationIndex 3", operationIndex)
             typedNumber += arithmeticInput;
             changeDisplay(typedNumber);
         }
@@ -84,23 +76,24 @@ const handleArithmeticInput = (arithmeticInput) => {
     }
     else if (isNaN(typedNumber[arithmeticIndex]))
     {
-        if(!(isNaN(typedNumber[arithmeticIndex - 1])))
+        if(typedNumber[arithmeticIndex - 1] >= 0)
         {
-            operationIndex = arithmeticIndex;
-            console.log("opreoperationIndex", operationIndex)
-            typedNumber = typedNumber.slice(0, arithmeticIndex) + arithmeticInput;
-            changeDisplay(typedNumber);
+            if(!(isNaN(typedNumber[arithmeticIndex - 1])))
+            {
+                operationIndex = arithmeticIndex;
+                typedNumber = typedNumber.slice(0, arithmeticIndex) + arithmeticInput;
+                changeDisplay(typedNumber);
+            }
+            else{
+                operationIndex = arithmeticIndex - 1;
+                typedNumber = typedNumber.slice(0, arithmeticIndex- 1) + arithmeticInput;
+                changeDisplay(typedNumber);
+            }
         }
-        else{
-            operationIndex = arithmeticIndex - 1;
-            console.log("opreoperationIndex", operationIndex)
-            typedNumber = typedNumber.slice(0, arithmeticIndex- 1) + arithmeticInput;
-            changeDisplay(typedNumber);
-        }
+
         return;
     }
     operationIndex = arithmeticIndex + 1;
-    console.log("opreoperationIndex", operationIndex)
     typedNumber += arithmeticInput;
     changeDisplay(typedNumber);
 }
@@ -114,10 +107,8 @@ const changeArithmetic = ()=>{
                 return i;
         }
         return typedNumber.length-1;
-        console.log("1")
     }
     else{
-        console.log("2")
         return typedNumber.length-1;
     }
 }
@@ -128,23 +119,15 @@ const result = ()=>{
     switch (typedNumber[operationIndex])
     {
         case "+":
-            console.log(leftNumber)
-            console.log(rightNumber)
             sum(leftNumber, rightNumber);
             break;
         case "-":
-            console.log(leftNumber)
-            console.log(rightNumber)
             subtraction(leftNumber, rightNumber);
             break;
         case "/":
-            console.log(leftNumber)
-            console.log(rightNumber)
             division(leftNumber, rightNumber);
             break;
         case "x":
-            console.log(leftNumber)
-            console.log(rightNumber)
             multiplication(leftNumber, rightNumber);
             break;
         default:
