@@ -90,7 +90,6 @@ const handleArithmeticInput = (arithmeticInput) => {
                 changeDisplay(typedNumber);
             }
         }
-
         return;
     }
     operationIndex = arithmeticIndex + 1;
