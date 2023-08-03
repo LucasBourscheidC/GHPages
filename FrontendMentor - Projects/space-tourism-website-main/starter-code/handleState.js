@@ -1,44 +1,44 @@
 export default function handleState(state){
-    const home = document.querySelectorAll('.container-home');
-    const crew = document.querySelectorAll('.container-crew');
-    const destination = document.querySelectorAll('.container-destination')
-    const technology = document.querySelectorAll('.container-technology')
+    const home = document.querySelectorAll('.home');
+    const crew = document.querySelectorAll('.crew');
+    const destination = document.querySelectorAll('.destination')
+    const technology = document.querySelectorAll('.technology')
     switch (state) {
         case 'destination':
-            rmClass(destination, 'hide');
-            addClass(home, 'hide');
-            addClass(crew, 'hide');
-            addClass(technology, 'hide');
+            addGrid(destination);
+            hide(home);
+            hide(crew);
+            hide(technology);
             break;
         case 'crew':
-            rmClass(crew, 'hide');
-            addClass(home, 'hide');
-            addClass(destination, 'hide');
-            addClass(technology, 'hide');
+            addGrid(crew);
+            hide(home);
+            hide(destination);
+            hide(technology);
             break;
         case 'technology':
-            rmClass(technology, 'hide');
-            addClass(home, 'hide');
-            addClass(destination, 'hide');
-            addClass(crew, 'hide');
+            addGrid(technology);
+            hide(home);
+            hide(destination);
+            hide(crew);
             break;
         default:
-            rmClass(home, 'hide');
-            addClass(crew, 'hide');
-            addClass(destination, 'hide');
-            addClass(technology, 'hide');
+            addGrid(home);
+            hide(crew);
+            hide(destination);
+            hide(technology);
             
     }
 
 }
 
-function addClass(elements, selectClass){
+function hide(elements){
     elements.forEach((element)=>{
-        element.classList.add(selectClass);
+        element.style.display = 'none';
     })
 }
-function rmClass(elements, selectClass){
+function addGrid(elements){
     elements.forEach((element)=>{
-        element.classList.remove(selectClass);
+        element.style.display = 'grid';
     })
 }

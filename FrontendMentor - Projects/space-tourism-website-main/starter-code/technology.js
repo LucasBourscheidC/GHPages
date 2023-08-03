@@ -20,6 +20,7 @@ export function technologyCreatElements(){
     const technologyImg = document.createElement('img');
 
     const divDesc = document.createElement('div');
+    const divButtons = document.createElement('div');
     const technologyTitle = document.createElement('h1');
     const technologySubTitle = document.createElement('h5');
     const technologyName = document.createElement('h1');
@@ -37,6 +38,9 @@ export function technologyCreatElements(){
         }
     }
 
+    divDesc.style.display = 'none';
+    divImg.style.display = 'none';
+
     const addInfo = (img, name, desc)=>{
         technologyImg.src = img;
 
@@ -46,10 +50,11 @@ export function technologyCreatElements(){
         technologyDesc.innerText = desc;
     }
     const addClass = ()=>{
-        divDesc.classList.add('container-technology');
-        divImg.classList.add('container-technology');
-        divDesc.classList.add('hide');
-        divImg.classList.add('hide');
+        divButtons.classList.add('container-technology-buttons');
+        divDesc.classList.add('technology');
+        divDesc.classList.add('container-technology1');
+        divImg.classList.add('technology');
+        divImg.classList.add('container-technology2');
     }
 
     const append = ()=>{
@@ -59,9 +64,10 @@ export function technologyCreatElements(){
         divImg.append(technologyImg);
 
         divDesc.append(technologyTitle);
-        divDesc.append(button1);
-        divDesc.append(button2);
-        divDesc.append(button3);
+        divDesc.append(divButtons);
+        divButtons.append(button1);
+        divButtons.append(button2);
+        divButtons.append(button3);
         divDesc.append(technologySubTitle);
         divDesc.append(technologyName);
         divDesc.append(technologyDesc);

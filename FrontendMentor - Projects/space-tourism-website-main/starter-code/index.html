@@ -3,32 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+            rel="stylesheet">
+
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="crew.css">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/crew.css">
+  <link rel="stylesheet" href="./styles/destination.css">
+  <link rel="stylesheet" href="./styles/technology.css">
   <title>Frontend Mentor | Space tourism website</title>
 </head>
 <body>
    <header>
     <img class="img-star" src="./assets/shared/logo.svg" alt="">
     <hr class="hr-header">
-      <div class="container-header-content hide">
-        <div class="header-content">
-          <button id="home" class="button-content" href="index.html">00 Home</button>
-          <button id="destination" class="button-content" href="destination-moon.html">01 Destination</button>
-          <button id="crew" class="button-content" href="crew-commander.html">02 Crew</button>
-          <button id="technology" class="button-content" href="technology-vehicle.html">03 Technology</button>
-          <hr class="hr-content">
-        </div>
-      </div>
-      <button id="button-hamburger" class="rotate0"><img class="img-hamburger " src="./assets/shared/icon-hamburger.svg" alt="hamburger"></button>
+    <div class="container-header-content hide">
+        <button id="home" class="button-content" href="index.html">00 Home</button>
+        <button id="destination" class="button-content" href="destination-moon.html">01 Destination</button>
+        <button id="crew" class="button-content" href="crew-commander.html">02 Crew</button>
+        <button id="technology" class="button-content" href="technology-vehicle.html">03 Technology</button>
+        <hr class="hr-content">
+    </div>
+    <button id="button-hamburger" class="rotate0"><img class="img-hamburger " src="./assets/shared/icon-hamburger.svg" alt="hamburger"></button>
    </header>
    <main>
       <div class="container1">
-        <div class="container-home">
+        <div class="container-home1 home">
           <h3 class="you-want">So, you want to travel to</h3>
           <h1 class="space">SPACE</h1>
           <p class="description">
@@ -39,7 +42,7 @@
         </div>
       </div>
       <div class="container2">
-        <div class="container-home">
+        <div class="container-home2 home">
           <button class="explore-circle">
             Explore
           </button>

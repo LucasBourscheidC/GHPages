@@ -22,21 +22,41 @@ export function crewCreatElements(){
     const crewImg = document.createElement('img');
     divImg.classList.add('crewteste');
     const divDesc = document.createElement('div');
+    const divButtons = document.createElement('div');
     const crewName = document.createElement('h1');
     const crewRole = document.createElement('h3');
     const crewBio = document.createElement('p');
 
     const startButtons = (buttons)=>{
         for(let i = 0; i < 4; i++)
-        {
+        {   
+            buttons[i].classList.add('crew-button');
             buttons[i].addEventListener('click', ()=>{
+                const innerButtons = buttons;
+                const buttonNumber = i;
                 addInfo(crewData()[i].images.png, 
                 crewData()[i].name,
                 crewData()[i].role, 
                 crewData()[i].bio);
+                for(let i = 0; i < 4; i++)
+                {
+                    innerButtons[i].classList.add('crew-button-gray');
+                    innerButtons[i].classList.remove('crew-button-white');
+                }
+                console.log(buttonNumber)
+                innerButtons[buttonNumber].classList.add('crew-button-white');
             })
+            if(i === 0){
+                buttons[i].classList.add('crew-button-white')
+            }
+            else{
+                buttons[i].classList.add('crew-button-gray')
+            }
         }
     }
+
+    divDesc.style.display = 'none';
+    divImg.style.display = 'none';
 
     const addInfo = (img, name, role, bio)=>{
         crewImg.src = img;
@@ -47,11 +67,13 @@ export function crewCreatElements(){
     }
 
     const addClass = ()=>{
-        divDesc.classList.add('hide');
-        divDesc.classList.add('container-crew');
-        divImg.classList.add('container-crew');
-        divImg.classList.add('hide');
+        divDesc.classList.add('crew');
+        divButtons.classList.add('container-crew-buttons');
+        divDesc.classList.add('container-crew1');
+        divImg.classList.add('crew');
+        divImg.classList.add('container-crew2');
         crewImg.classList.add('crewImg');
+        crewRole.classList.add('crew-role');
     }
 
     const append = ()=>{
@@ -60,12 +82,13 @@ export function crewCreatElements(){
 
         divImg.append(crewImg);
 
-        divDesc.append(button1);
-        divDesc.append(button2);
-        divDesc.append(button3);
-        divDesc.append(button4);
-        divDesc.append(crewName);
+        divDesc.append(divButtons);
+        divButtons.append(button1);
+        divButtons.append(button2);
+        divButtons.append(button3);
+        divButtons.append(button4);
         divDesc.append(crewRole);
+        divDesc.append(crewName);
         divDesc.append(crewBio);
     }
     addInfo(crewData()[0].images.png, 

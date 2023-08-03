@@ -1,0 +1,39 @@
+.destination {
+    text-align: center;
+    font-size: 0.5rem;
+}
+.destination > img{
+    justify-self: center;
+    width: 70%;
+}
+.container-destination-buttons{
+    padding: 0 25vw;
+    display: flex;
+    justify-content: space-around;
+    margin: 2vh 0;
+}
+.container-destination-buttons > button{
+    font-size: 1rem;
+    margin-left: 5vw;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    justify-self: start;
+}
+.container-destination1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.container-destination1 > *{
+    grid-column: 4 span;
+}
+.container-destination1 > button{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    justify-self: start;
+    grid-column: 1 span;
+}
+.destination-hr{
+    width: 100%;
+}

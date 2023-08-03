@@ -22,6 +22,7 @@ export function destinationCreatElements(){
     const destinationImg = document.createElement('img');
 
     const divDesc = document.createElement('div');
+    const divButtons = document.createElement('div');
     const destinationName = document.createElement('h1');
     const destinationDesc = document.createElement('p');
     const destinationHr = document.createElement('hr');
@@ -36,6 +37,7 @@ export function destinationCreatElements(){
     const startButtons = (buttons)=>{
         for(let i = 0; i < 4; i++)
         {
+            buttons[i].innerText = destinationsData()[i].name;
             buttons[i].addEventListener('click', ()=>{
                 addInfo(destinationsData()[i].images.png, 
                     destinationsData()[i].name,
@@ -45,9 +47,13 @@ export function destinationCreatElements(){
             })
         }
     }
+    divDesc.style.display = 'none';
+    divImg.style.display = 'none';
+    
     const addInfo = (img, name, desc, dist, travel)=>{
         destTitle.innerText = '01 PICK YOUR DESTINATION';
         destinationImg.src = img;
+        destinationImg.alt = 'destination';
 
         destinationName.innerText = name;
         destinationDesc.innerText = desc;
@@ -57,10 +63,12 @@ export function destinationCreatElements(){
         destinationTravel.innerText = travel;
     }
     const addClass = ()=>{
-        divDesc.classList.add('container-destination');
-        divImg.classList.add('container-destination');
-        divDesc.classList.add('hide');
-        divImg.classList.add('hide');
+        divButtons.classList.add('container-destination-buttons');
+        divDesc.classList.add('destination');
+        divDesc.classList.add('container-destination1');
+        divImg.classList.add('destination');
+        divImg.classList.add('container-destination2');
+        destinationHr.classList.add('destination-hr');
     }
 
     const append = ()=>{
@@ -70,18 +78,19 @@ export function destinationCreatElements(){
         divImg.append(destTitle);
         divImg.append(destinationImg);
 
-        divDesc.append(button1);
-        divDesc.append(button2);
-        divDesc.append(button3);
-        divDesc.append(button4);
+        divDesc.append(divButtons);
+        divButtons.append(button1);
+        divButtons.append(button2);
+        divButtons.append(button3);
+        divButtons.append(button4);
         
         divDesc.append(destinationName);
         divDesc.append(destinationDesc);
         divDesc.append(destinationHr);
         divDesc.append(destinationTravelDiv);
         divDesc.append(destinationAVGDist);
-        divDesc.append(destinationEST);
         divDesc.append(destinationDist);
+        divDesc.append(destinationEST);
         divDesc.append(destinationTravel);
     }
     addInfo(destinationsData()[0].images.png, 

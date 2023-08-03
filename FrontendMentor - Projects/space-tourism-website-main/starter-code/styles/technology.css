@@ -1,0 +1,19 @@
+.technology{
+    text-align: center;
+    font-size: 0.5rem;
+}
+
+.technology > img{
+    justify-self: center;
+    width: 70%;
+}
+.container-technology1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.container-technology1 > *{
+    grid-column: 4 span;
+}
+.container-technology1 > button{
+    grid-column: 1 span;
+}
