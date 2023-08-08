@@ -14,6 +14,20 @@
 .container-technology1 > *{
     grid-column: 4 span;
 }
-.container-technology1 > button{
-    grid-column: 1 span;
+.container-technology-buttons{
+    padding: 0 25vw;
+    display: flex;
+    justify-content: space-around;
+    margin: 2vh 0;
 }
+.container-technology-buttons > button{
+    font-size: 1rem;
+    border: 1px solid gray;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 10vw;
+    height: 10vw;
+}
+.container-technology1 h1{font-size: 2rem;}
+.container-technology1 h5{font-size: 0.8rem;}
+.container-technology1 p{font-size: 1rem;}

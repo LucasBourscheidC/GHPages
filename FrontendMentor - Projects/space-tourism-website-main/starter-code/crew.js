@@ -19,8 +19,9 @@ export function crewCreatElements(){
     const button4 = document.createElement('button');
 
     const divImg = document.createElement('div');
+    const crewTitle = document.createElement('h1');
     const crewImg = document.createElement('img');
-    divImg.classList.add('crewteste');
+
     const divDesc = document.createElement('div');
     const divButtons = document.createElement('div');
     const crewName = document.createElement('h1');
@@ -33,25 +34,16 @@ export function crewCreatElements(){
             buttons[i].classList.add('crew-button');
             buttons[i].addEventListener('click', ()=>{
                 const innerButtons = buttons;
-                const buttonNumber = i;
                 addInfo(crewData()[i].images.png, 
                 crewData()[i].name,
                 crewData()[i].role, 
                 crewData()[i].bio);
                 for(let i = 0; i < 4; i++)
                 {
-                    innerButtons[i].classList.add('crew-button-gray');
-                    innerButtons[i].classList.remove('crew-button-white');
+                    innerButtons[i].style.backgroundColor = 'gray';
                 }
-                console.log(buttonNumber)
-                innerButtons[buttonNumber].classList.add('crew-button-white');
+                innerButtons[i].style.backgroundColor = 'white';
             })
-            if(i === 0){
-                buttons[i].classList.add('crew-button-white')
-            }
-            else{
-                buttons[i].classList.add('crew-button-gray')
-            }
         }
     }
 
@@ -59,11 +51,17 @@ export function crewCreatElements(){
     divImg.style.display = 'none';
 
     const addInfo = (img, name, role, bio)=>{
+        crewTitle.innerText = '02 MEET YOUT CREW';
         crewImg.src = img;
         crewImg.alt = 'crew member';
         crewName.innerText = name;
         crewRole.innerText = role;
         crewBio.innerText = bio;
+
+         button1.style.backgroundColor = 'gray';
+         button2.style.backgroundColor = 'gray';
+         button3.style.backgroundColor = 'gray';
+         button4.style.backgroundColor = 'gray';
     }
 
     const addClass = ()=>{
@@ -80,6 +78,7 @@ export function crewCreatElements(){
         container1.append(divImg);
         container2.append(divDesc);
 
+        divImg.append(crewTitle);
         divImg.append(crewImg);
 
         divDesc.append(divButtons);

@@ -4,36 +4,71 @@
 }
 .destination > img{
     justify-self: center;
-    width: 70%;
+    width: 50%;
+    margin: 5vh 0;
 }
+.container-destination2{letter-spacing: 1vw;}
+
 .container-destination-buttons{
     padding: 0 25vw;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: space-around;
     margin: 2vh 0;
 }
 .container-destination-buttons > button{
     font-size: 1rem;
-    margin-left: 5vw;
     cursor: pointer;
     background-color: transparent;
     border: none;
-    justify-self: start;
+}
+
+.destination-hr-buttons{
+    grid-column: 1;
+    width: 100%;
+    border: none; 
+    border-bottom: 3px solid white; 
+    margin: 5px 0;
 }
 .container-destination1{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .container-destination1 > *{
+    margin: 0;
     grid-column: 4 span;
+    font-size: 1rem;
 }
-.container-destination1 > button{
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    justify-self: start;
-    grid-column: 1 span;
-}
+.container-destination1 > h1{font-size: 4rem;}
+.container-destination1 > h3{font-size: 2rem;}
+.container-destination1 > p{font-size: 1rem;}
 .destination-hr{
     width: 100%;
+    border: none; 
+    height: 1px; 
+    border-bottom: 1px solid gray; 
+    margin: 5vh 0;
+}
+
+@media only screen and (min-width: 650px) {
+    .container-destination2 h1{
+        justify-self: start;
+        font-size: 1.8rem;
+    }
+    .container-destination-buttons > button{
+        letter-spacing: 0.2rem;
+        font-size: 1.6rem;
+    }
+    .container-destination1 > h1{font-size: 6rem;}
+    .container-destination1 > h3{font-size: 3rem;}
+    .container-destination1 > p{font-size: 1.5rem;}
+    .container-travel{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .container-travel p{
+        font-size: 1.2rem;
+        grid-row: 1;
+    }
+    .container-travel h3{font-size: 3rem;}
 }

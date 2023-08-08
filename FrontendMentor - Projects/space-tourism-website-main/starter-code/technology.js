@@ -4,10 +4,6 @@ const container1 = document.querySelector('.container1');
 const container2 = document.querySelector('.container2');
 
 export default function technology(){
-    const technology0 = technologyData[0];
-    const technology1 = technologyData[1];
-    const technology2 = technologyData[2];
-    const technology3 = technologyData[3];
     console.log(technologyData());
 }
 
@@ -31,9 +27,19 @@ export function technologyCreatElements(){
         for(let i = 0; i < 3; i++)
         {
             buttons[i].addEventListener('click', ()=>{
+                const innerButtons = buttons;
                 addInfo(technologyData()[i].images.portrait, 
                     technologyData()[i].name,
                     technologyData()[i].description);
+                
+                    
+                for(let i = 0; i < 3; i++)
+                {
+                    innerButtons[i].style.backgroundColor = 'hsl(230, 35%, 7%)';
+                    innerButtons[i].style.color = 'white';
+                }
+                innerButtons[i].style.backgroundColor = 'white';
+                innerButtons[i].style.color = 'hsl(230, 35%, 7%)';
             })
         }
     }
@@ -48,6 +54,12 @@ export function technologyCreatElements(){
         technologySubTitle.innerText = "THE TERMINOLOGY...";
         technologyName.innerText = name;
         technologyDesc.innerText = desc;
+
+        button1.innerText = '1';
+        button1.style.backgroundColor = 'white';
+        button1.style.color = 'hsl(230, 35%, 7%)';
+        button2.innerText = '2';
+        button3.innerText = '3';
     }
     const addClass = ()=>{
         divButtons.classList.add('container-technology-buttons');
