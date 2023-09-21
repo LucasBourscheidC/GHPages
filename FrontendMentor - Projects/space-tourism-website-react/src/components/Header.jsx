@@ -4,8 +4,8 @@ import "../styles/header.css"
 
 
 export default function Header({setBackgroundState}) {
-  const hamburger = "./src/assets/shared/icon-hamburger.svg";
-  const close = "./src/assets/shared/icon-close.svg";
+  const hamburger = "./assets/shared/icon-hamburger.svg";
+  const close = "./assets/shared/icon-close.svg";
   const [mobile, setMobile] = useState([hamburger, "hide"]);
   const [hrPosition, setHrPosition] = useState({gridColumn: 1});
   const handleClick = (newState, gridColumn)=>{
