@@ -17,7 +17,7 @@ export default function Header({setBackgroundState}) {
   }
     return (
       <header>
-        <img className="img-star" src="./src/assets/shared/logo.svg" alt="" />
+        <img className="img-star" src="./assets/shared/logo.svg" alt="" />
         <hr className="hr-header" />
         <div className={`container-header-content ${mobile[1]}`}>
           <Link onClick={()=> handleClick("background-home", 1)} to="/" id="home" className="button-content">
