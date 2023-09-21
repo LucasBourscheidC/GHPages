@@ -5,7 +5,7 @@
 
 .container-crew2 h1{
     margin: 4vh;
-    letter-spacing: 0.5vh;
+    letter-spacing: 0.3rem;
 }
 .crew > img{
     justify-self: center;
@@ -26,8 +26,8 @@
 .container-crew-buttons > button{
     border: none;
     border-radius: 50%;
-    width: 4vw;
-    height: 4vw;
+    width: 2vh;
+    height: 2vh;
 }
 .container-crew1 > h1{font-size: 2rem;}
 .container-crew1 > h3{font-size: 1.5rem;}
@@ -40,5 +40,23 @@
 }
 
 @media only screen and (min-width: 650px) {
+    .container-crew2 h1{
+        font-size: 2rem;
+        margin: 0;
+        margin-bottom: 4vh;
+        letter-spacing: 0.5rem;
+    }
+    .container-crew1 > h1{font-size: 3rem;}
+    .container-crew1 > h3{font-size: 1.8rem;}
+    .container-crew1 > p{
+        margin-top: 3vh;
+        font-size: 1.5rem;
+    }
+}
+@media only screen and (min-width: 1300px) {
+    .crew > img{
+        justify-self: center;
+        width: 50%;
+    }
 
 }

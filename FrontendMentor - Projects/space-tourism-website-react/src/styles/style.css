@@ -1,0 +1,73 @@
+:root{
+    --clr-dark: 230 35% 7%;
+    --clr-light: 231 77% 90%;
+    --clr-white: 0 0% 100%;
+
+    --fs-900: 9.375rem;
+    --fs-800: 6.25rem;
+    --fs-700: 3.5;
+    --fs-600: 2rem;
+    --fs-500: 1.75rem;
+    --fs-400: 1.125rem;
+    --fs-300: 1rem;
+    --fs-200: 0.875rem;
+
+    --ff-serif: "Bellefair", serif;
+    --ff-sans-cond: "Barlow Condensed", sans-serif;
+    --f-sans-normal: "Barlow", sans-serif;
+}
+.bellefair{font-family: var(--ff-serif);}
+.barlow-condense{
+    font-family: var(--ff-sans-cond);
+    letter-spacing: 2px;
+}
+
+.bg-dark{background-color: hsl(var(--clr-dark));}
+.bg-accent{background-color: hsl(var(--clr-light));}
+.bg-dark{background-color: hsl(var(--clr-white));}
+
+.text-dark{color: hsl(var(--clr-dark));}
+.text-accent{color: hsl(var(--clr-light));}
+.text-white{color: hsl(var(--clr-white));}
+*{
+    box-sizing: border-box;
+    color: white;
+    font-weight: 400;
+    margin: 0;
+}
+body{
+    background-size: cover;
+    background-position: bottom center;
+    background-color: hsl(var(--clr-dark));
+    font-family: var(--f-sans-normal);
+    font-size: var(--fs-400);
+    margin: 2vh 2vh;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+button{
+    font:inherit;
+}
+.flex{
+    display: flex;
+}
+.grid{
+    display: grid;
+}
+
+@media only screen and (min-width: 650px) {
+    body{
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    body *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+    }
+}

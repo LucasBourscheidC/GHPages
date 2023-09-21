@@ -14,8 +14,13 @@
 .container-technology1 > *{
     grid-column: 4 span;
 }
+.container-technology2 h1{
+    margin: 2vh;
+    letter-spacing: 0.3rem;
+    font-size: 1rem;
+}
 .container-technology-buttons{
-    padding: 0 25vw;
+    padding: 0 15vw;
     display: flex;
     justify-content: space-around;
     margin: 2vh 0;
@@ -31,3 +36,19 @@
 .container-technology1 h1{font-size: 2rem;}
 .container-technology1 h5{font-size: 0.8rem;}
 .container-technology1 p{font-size: 1rem;}
+
+@media only screen and (min-width: 650px) {
+    .container-technology1 h1{
+        margin: 2vh 0;
+        font-size: 4rem;
+    }
+    .container-technology1 h5{font-size: 1.3rem;}
+    .container-technology1 p{font-size: 1.3rem;}
+    .container-technology-buttons > button{font-size: 2rem;}
+    .container-technology2 h1{
+        margin: 0;
+        margin-bottom: 3vh;
+        letter-spacing: 0.5rem;
+        font-size: 2rem;
+    }
+}

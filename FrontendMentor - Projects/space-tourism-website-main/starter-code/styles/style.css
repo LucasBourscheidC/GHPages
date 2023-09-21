@@ -176,3 +176,44 @@ button{
         width: 30vh;
     }
 }
+
+@media only screen and (min-width: 1300px) {
+    body *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+    }
+    main{
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        grid-template-columns: 1fr 1fr;
+    }
+    .container-home1{
+        padding: 0 25vh;
+        margin-top: 20vh;
+        text-align:left;
+    }
+    .container-home2{
+        padding: 0 25vh;
+        margin-top: 20vh;
+    }
+    .space{
+        margin: 0;
+        font-size: 10rem;
+        letter-spacing: 0.8rem;
+    }
+    .you-want{
+        letter-spacing: 0.3rem;
+        margin: 0;
+        font-size: 2rem;
+    }
+    .description{
+        font-size: 1.2rem;
+    }
+}

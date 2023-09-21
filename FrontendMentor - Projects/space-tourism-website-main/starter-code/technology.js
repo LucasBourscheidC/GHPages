@@ -72,10 +72,10 @@ export function technologyCreatElements(){
     const append = ()=>{
         container1.append(divImg);
         container2.append(divDesc);
-
+        
+        divImg.append(technologyTitle);
         divImg.append(technologyImg);
 
-        divDesc.append(technologyTitle);
         divDesc.append(divButtons);
         divButtons.append(button1);
         divButtons.append(button2);

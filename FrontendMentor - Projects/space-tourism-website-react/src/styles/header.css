@@ -1,0 +1,120 @@
+header{
+    font-family: var(--ff-sans-cond);
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container-header-content{
+    top: 0;
+    right: 0;
+    position: absolute;
+    height: 100vh;
+    width: 70vw;
+    padding-top: 10vh;
+    padding-bottom: 60vh;
+    background: hsl( var(--clr-white) / .05);
+    backdrop-filter: blur(1.5rem);
+}
+.img-star{
+    align-self: center;
+    justify-self: center;
+}
+#button-hamburger{
+    margin-right: 2vw;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.img-hamburger{
+    width: 150%;
+}
+.hr-header{
+    display: none;
+}
+.button-content{
+    margin-left: 5vw;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    justify-self: start;
+    align-self: center;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.hr-content{
+    display: none;
+}
+.grid{
+    display: grid;
+}
+.hide{
+    display: none;
+}
+@media only screen and (min-width: 650px) {
+    header{
+        display: flex;
+        position: absolute;
+        top: 0;
+        margin: 0;
+        padding: 0;
+        height: 10vh;
+        width: 100vw;
+    }
+    .img-star{
+        top: 0;
+        margin: 3vh;
+    }
+    .container-header-content{
+        position: unset;
+        display: grid;
+        height: 100%;
+        width: 600px;
+        margin: 0;
+        padding: 0;
+        padding-left: 5vw;
+        grid-template-columns: minmax(30px, auto) minmax(30px, auto) minmax(30px, auto) minmax(30px, auto) 1fr;
+        grid-column-gap: 5%;
+        grid-template-rows: auto 10px;
+    }
+    .hr-content{
+        display: unset;
+        grid-row: 2;
+        grid-column: 1;
+        align-self: end;
+        border: none;
+        height: 3px;
+        background-color: white;
+        margin: 0;
+    }
+    .button-content{
+        margin: 0;
+        justify-self: center;
+    }
+    #button-hamburger{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    body header{
+        margin-top: 5vh;
+    }
+    .hr-header{
+        position: absolute;
+        z-index: 1;
+        margin-left: 8vw;
+        border-bottom: 1px;
+        border-color: hsl( var(--clr-white) / .25);
+        display: unset;
+        width: 34vw;
+    }
+    .container-header-content{
+        width: 60%;
+        grid-template-columns: minmax(30px, auto) minmax(30px, auto) minmax(30px, auto) minmax(30px, auto) 1fr;
+        grid-column-gap: 10%;
+    }
+}
