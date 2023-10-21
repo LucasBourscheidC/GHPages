@@ -1,7 +1,10 @@
+import { useState } from "react"
+
 export default function Board(){
+    
     return<>
         <div>
-            <button className="board-button">+New Column</button>
+            <button onClick={null} className="board-button">+New Column</button>
         </div>
     </>
 }
