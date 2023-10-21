@@ -8,6 +8,9 @@ export default function Header(){
         console.log(boardsList);
         console.log("teste");
     }
+    const addNewTask = () =>{
+
+    }
     return<>
     <div className="container-sidebar">
         <div>
@@ -25,6 +28,16 @@ export default function Header(){
             </div>
             <button> <img src="" alt="eye"/> Hide Sidebar</button>
         </div>
+    </div>
+    <div className="container-header">
+        <h1>Board name</h1>
+        <div className="header-container-buttons">
+            <button onClick={addNewTask()}>+Add New Task</button>
+            <button>...</button>
+        </div>
+    </div>
+    <div>
+            <button onClick={null} className="board-button">+New Column</button>
     </div>
     </>
 }
