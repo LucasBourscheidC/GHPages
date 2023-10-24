@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import Board from "../Board.js"
+import Board from "./Board.jsx"
 import BoardName from "./boardName.jsx"
 import CreateTask from "./CreateTask.jsx"
 
@@ -8,22 +8,20 @@ export default function Header(){
     const [currentBoard, setCurrentBoard] = useState(undefined)
     const [currentBoardTasks, setCurrentBoardTasks] = useState(undefined)
 
-    useEffect(() => {
-        if(currentBoard){
-            setCurrentBoardTasks(currentBoard.getTasks());
-        }
-        console.log("teste")
-      }, [currentBoard]);
-
       
-    const addNewBoard = (name) =>{
-        setBoardsList(prevData => [...prevData, new Board(name)]);
+    const createBoard = (name) =>{
+        setBoardsList(prevData => [...prevData, <Board name={name} />]);
     }
     const addNewTask = () =>{
 
     }
     const handleSelectingBoard = (board)=>{
-        setCurrentBoard(board);
+        console.log(typeof(board))
+        if(board instanceof Board)
+        {
+            console.log(board)
+            setCurrentBoard(board);
+        }
     }
     return<>
     {/*side bar */}
@@ -33,11 +31,13 @@ export default function Header(){
             <p>All Boards({boardsList.length})</p>
             {
                 boardsList.map((board, index) =>{
-                    return <button onClick={()=>handleSelectingBoard(board)} key={index}>{board.getName()}</button>
+                    return <button onClick={()=>handleSelectingBoard(board)} key={index}>
+                        {board}
+                    </button>
                 })
                 
             }
-            <button onClick={()=>addNewBoard("default")}>+Create New Board</button>
+            <button onClick={()=>createBoard("default")}>+Create New Board</button>
         </div>
         <div>
             <div className="container-theme">
@@ -62,16 +62,11 @@ export default function Header(){
     
     {/*board tasks*/}
     <div>
-            {
-                currentBoard ? currentBoardTasks? currentBoardTasks.map((task, index)=>{
-                    return <h1 key={index}>{task.title}</h1>
-                }): <h1>false </h1>: <h1>false</h1>
-            }
             <button onClick={null} className="board-button">+New Column</button>
     </div>
 
     {/*add board name */}
-        <BoardName addNewBoard={addNewBoard} />
+        <BoardName addNewBoard={createBoard} />
         <CreateTask currentBoard={currentBoard} setCurrentBoard={setCurrentBoard}/>
     </>
 }
