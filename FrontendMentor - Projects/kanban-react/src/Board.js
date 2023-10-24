@@ -5,13 +5,22 @@ export default class Board{
         this.name = name;
         this.taskList = [];
         this.columnList = [];
-
-        console.log(name);
+        this.nextTaskId = 0;
     }
     newColumn(){
 
     }
-    newTask(){
-        taskList.push(new Task);
+    createTask(title, description, category){
+        this.taskList.push(new Task(this.nextTaskId, title, description, category));
+        this.nextTaskId += 1;
+    }
+    getName(){
+        return this.name;
+    }
+    setName(name){
+        this.name = name;
+    }
+    getTasks(){
+        return this.taskList;
     }
 }
