@@ -60,3 +60,9 @@
 }
 
 /*text*/
+
+/* Form for board name */
+
+.formBoardName{
+    display: none;
+}

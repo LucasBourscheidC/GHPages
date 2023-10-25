@@ -7,6 +7,7 @@ export default function Header(){
     const [boardsList, setBoardsList] = useState([])
     const [currentBoard, setCurrentBoard] = useState(undefined)
     const [newBoardId, setNewBoardId] = useState(0);
+    const [displayFormBoardName, setDisplayFormBoardName] = useState({display: "none"})
 
       
     const createBoard = (boardName) =>{
@@ -48,9 +49,7 @@ export default function Header(){
                 }): <></>
                 
             }
-            <button onClick={()=>{
-                return createBoard("default")
-            }}>+Create New Board</button>
+            <button onClick={()=>setDisplayFormBoardName({display: "unset"})}>+Create New Board</button>
         </div>
         <div>
             <div className="container-theme">
@@ -85,7 +84,7 @@ export default function Header(){
     </div>
 
     {/*add board name */}
-        <BoardName addNewBoard={createBoard} />
+        <BoardName displayForm={displayFormBoardName} setDisplayForm={setDisplayFormBoardName} createBoard={createBoard} />
         <CreateTask currentBoard={currentBoard} setCurrentBoard={setCurrentBoard} boardListUpdateForNewTasks={boardListUpdateForNewTasks}/>
     </>
 }
