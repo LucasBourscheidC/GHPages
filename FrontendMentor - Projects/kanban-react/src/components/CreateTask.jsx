@@ -2,26 +2,29 @@ import React, { useState } from 'react';
 import Task from "./Task";
 import Board from "./Board";
 
-export default function CreateTask({currentBoard, setCurrentBoard}){
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [category, setCategory] = useState('');
-    const handleCreateTask = (e)=>{
-        e.preventDefault();
-        console.log('Título:', title);
-        console.log('Descrição:', description);
-        console.log('Categoria:', category);
-        if(currentBoard)
-        {
-          let aux = new Board("aaaa");
-          let newBoard =  currentBoard;
-          setCurrentBoard(aux)
-          newBoard.setName("arrsadsa")
-          newBoard.createTask(title, description, category)
-          setCurrentBoard(newBoard)
-          console.log(currentBoard)
-        }
+export default function CreateTask({currentBoard, setCurrentBoard, boardListUpdateForNewTasks}){
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [category, setCategory] = useState('');
+
+  const handleCreateTask = (e)=>{
+    e.preventDefault();
+    console.log('Título:', title);
+    console.log('Descrição:', description);
+    console.log('Categoria:', category);
+    if (currentBoard) {
+      const newTask = {
+        title: title,
+        description: description,
+        category: category,
+      };
+      setCurrentBoard((prev)=> {return {
+        ...prev,
+        taskList: [...prev.taskList, newTask],
+      }})
+      boardListUpdateForNewTasks(newTask)
     }
+  }
   return (
     <div>
       <h2>New Task</h2>
