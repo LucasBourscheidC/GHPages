@@ -3,7 +3,6 @@ import { useState } from "react"
 export default function BoardName({displayForm, setDisplayForm,createBoard}){
     const [newBoardName, setNewBoardName] = useState("")
     const handleNewName = (event)=>{
-        console.log(event.target.value)
         setNewBoardName(event.target.value);
     }
     const handleSubmit = (event) => {
@@ -14,7 +13,6 @@ export default function BoardName({displayForm, setDisplayForm,createBoard}){
         }
         setNewBoardName("");
         setDisplayForm({display: "none"})
-        console.log('Name:', newBoardName);
     };
 
     const handleCloseForm = ()=>{

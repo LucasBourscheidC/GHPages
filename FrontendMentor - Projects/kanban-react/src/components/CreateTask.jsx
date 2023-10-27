@@ -2,31 +2,47 @@ import React, { useState } from 'react';
 import Task from "./Task";
 import Board from "./Board";
 
-export default function CreateTask({currentBoard, setCurrentBoard, boardListUpdateForNewTasks}){
+export default function CreateTask(props){
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
 
   const handleCreateTask = (e)=>{
     e.preventDefault();
+    if (props.currentBoard) {
+      const newTask = createTask()
+      updateCurrentBoard(newTask)
+      props.boardListUpdateForNewTasks(newTask)
+    }
+    handleCloseForm();
+  }
+  const createTask = ()=>{
     console.log('Título:', title);
     console.log('Descrição:', description);
     console.log('Categoria:', category);
-    if (currentBoard) {
-      const newTask = {
-        title: title,
-        description: description,
-        category: category,
-      };
-      setCurrentBoard((prev)=> {return {
+    const newTask = {
+      title: title,
+      description: description,
+      category: category,
+    };
+    return newTask
+  }
+  const updateCurrentBoard = (newTask)=>{
+    props.setCurrentBoard((prev)=> {return {
         ...prev,
         taskList: [...prev.taskList, newTask],
-      }})
-      boardListUpdateForNewTasks(newTask)
-    }
+    }})
   }
+
+  const handleCloseForm = ()=>{
+    setTitle("");
+    setDescription("");
+    setCategory("");
+    props.setDisplayForm({display: "none"})
+}
+
   return (
-    <div>
+    <div style={props.displayForm}>
       <h2>New Task</h2>
       <form onSubmit={handleCreateTask}>
         <div>

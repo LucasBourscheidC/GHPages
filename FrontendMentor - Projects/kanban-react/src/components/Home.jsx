@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react"
 import Board from "./Board.jsx"
-import BoardName from "./boardName.jsx"
+import BoardName from "./BoardName.jsx"
 import CreateTask from "./CreateTask.jsx"
+import Task from "./Task.jsx"
 
 export default function Header(){
     const [boardsList, setBoardsList] = useState([])
     const [currentBoard, setCurrentBoard] = useState(undefined)
     const [newBoardId, setNewBoardId] = useState(0);
     const [displayFormBoardName, setDisplayFormBoardName] = useState({display: "none"})
+    const [displayFormCreateTask, setDisplayFormCreateTask] = useState({display: "none"})
 
       
     const createBoard = (boardName) =>{
@@ -19,7 +21,7 @@ export default function Header(){
         taskList: [] }]);
     }
     const addNewTask = () =>{
-
+        setDisplayFormCreateTask({display: "unset"})
     }
     const boardListUpdateForNewTasks = (newTask)=>{
         const updatedBoardList = boardsList.map((board) => {
@@ -67,7 +69,7 @@ export default function Header(){
     <div className="container-header">
         <h1>{currentBoard ? currentBoard.name : ""}</h1>
         <div className="header-container-buttons">
-            <button onClick={addNewTask()}>+Add New Task</button>
+            <button onClick={addNewTask}>+Add New Task</button>
         </div>
     </div>
     
@@ -77,7 +79,7 @@ export default function Header(){
             currentBoard? currentBoard.taskList.map((task, index)=>{
                 console.log("TASK")
                 console.log(task)
-                return <button key={index}>{task.title}</button>
+                return <Task task={task} key={index} />
             }): <></>
         }
         <button onClick={null} className="board-button">+New Column</button>
@@ -85,6 +87,6 @@ export default function Header(){
 
     {/*add board name */}
         <BoardName displayForm={displayFormBoardName} setDisplayForm={setDisplayFormBoardName} createBoard={createBoard} />
-        <CreateTask currentBoard={currentBoard} setCurrentBoard={setCurrentBoard} boardListUpdateForNewTasks={boardListUpdateForNewTasks}/>
+        <CreateTask displayForm={displayFormCreateTask} setDisplayForm={setDisplayFormCreateTask} currentBoard={currentBoard} setCurrentBoard={setCurrentBoard} boardListUpdateForNewTasks={boardListUpdateForNewTasks}/>
     </>
 }

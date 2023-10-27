@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export default function Task(props){
-    const [id, setId] = useState(props.id)
-    const [title, setTitle] = useState(props.title)
-    const [description, setDescription] = useState(props.description)
-    const [category, setCategory] = useState(props.category)
+export default function Task({task}){
+    const [id, setId] = useState(0)
+    const [title, setTitle] = useState(task.title)
+    const [description, setDescription] = useState(task.description)
+    const [category, setCategory] = useState(task.category)
 
     return <>
         <div>
