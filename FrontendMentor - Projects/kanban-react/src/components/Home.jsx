@@ -10,8 +10,8 @@ export default function Header(){
     const [newBoardId, setNewBoardId] = useState(0);
     const [displayFormBoardName, setDisplayFormBoardName] = useState({display: "none"})
     const [displayFormCreateTask, setDisplayFormCreateTask] = useState({display: "none"})
+    const [displayBoard, setDisplayBoard] = useState({display: "none"})
 
-      
     const createBoard = (boardName) =>{
         setNewBoardId((prev)=> prev + 1)
         setBoardsList(prevData => 
@@ -20,9 +20,11 @@ export default function Header(){
         id: newBoardId,
         taskList: [] }]);
     }
-    const addNewTask = () =>{
+
+    const createTask = () =>{
         setDisplayFormCreateTask({display: "unset"})
     }
+
     const boardListUpdateForNewTasks = (newTask)=>{
         const updatedBoardList = boardsList.map((board) => {
             if (board.id === currentBoard.id) {
@@ -35,10 +37,28 @@ export default function Header(){
           });
           setBoardsList(updatedBoardList);
     }
+
     const handleSelectingBoard = (board)=>{
         console.log(board)
         setCurrentBoard(board);
     }
+
+    const findcurrentBoardInboardsList = ()=>{
+        boardsList.map((board, index)=>{
+            if(board.id === currentBoard.id){
+
+            }
+        })
+    }
+    const updateBoardName = ()=>{
+        
+    }
+    useEffect(()=>{
+        if(currentBoard){
+            setDisplayBoard({display: "flex"})
+        }
+    }, [currentBoard])
+      
     return<>
     {/*side bar */}
     <div className="container-sidebar">
@@ -53,6 +73,7 @@ export default function Header(){
             }
             <button onClick={()=>setDisplayFormBoardName({display: "unset"})}>+Create New Board</button>
         </div>
+
         <div>
             <div className="container-theme">
                 <img src="" alt="sun" />
@@ -66,15 +87,19 @@ export default function Header(){
     </div>
 
     {/*selected bord */}
-    <div className="container-header">
-        <h1>{currentBoard ? currentBoard.name : ""}</h1>
+    <div style={displayBoard} className="container-header">
+        <div>
+            <h1>{currentBoard ? currentBoard.name : ""}</h1>
+            <button>Edit Name</button>
+        </div>
         <div className="header-container-buttons">
-            <button onClick={addNewTask}>+Add New Task</button>
+            <button onClick={createTask}>+Create New Task</button>
+            <button>Delete Board</button>
         </div>
     </div>
     
     {/*board tasks*/}
-    <div>
+    <div >
         {
             currentBoard? currentBoard.taskList.map((task, index)=>{
                 console.log("TASK")

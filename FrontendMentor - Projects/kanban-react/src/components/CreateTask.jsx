@@ -16,6 +16,7 @@ export default function CreateTask(props){
     }
     handleCloseForm();
   }
+
   const createTask = ()=>{
     console.log('Título:', title);
     console.log('Descrição:', description);
@@ -27,6 +28,7 @@ export default function CreateTask(props){
     };
     return newTask
   }
+
   const updateCurrentBoard = (newTask)=>{
     props.setCurrentBoard((prev)=> {return {
         ...prev,
@@ -44,6 +46,7 @@ export default function CreateTask(props){
   return (
     <div style={props.displayForm}>
       <h2>New Task</h2>
+      <button onClick={handleCloseForm} >X</button>
       <form onSubmit={handleCreateTask}>
         <div>
           <label htmlFor="title">Title:</label>
