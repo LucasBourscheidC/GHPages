@@ -1,15 +1,17 @@
 import { useState } from "react"
 
-export default function BoardName({displayForm, setDisplayForm,createBoard}){
+export default function BoardName({displayForm, setDisplayForm, createOrChangeBoardName}){
     const [newBoardName, setNewBoardName] = useState("")
+
     const handleNewName = (event)=>{
         setNewBoardName(event.target.value);
     }
+    
     const handleSubmit = (event) => {
         event.preventDefault();
         if(newBoardName)
         {
-            createBoard(newBoardName);
+            createOrChangeBoardName(newBoardName);
         }
         setNewBoardName("");
         setDisplayForm({display: "none"})
@@ -19,6 +21,7 @@ export default function BoardName({displayForm, setDisplayForm,createBoard}){
         setNewBoardName("");
         setDisplayForm({display: "none"})
     }
+
     return<>
         <div style={displayForm} className="formBoardName">
             <button onClick={handleCloseForm}>X</button>

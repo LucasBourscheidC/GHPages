@@ -70,3 +70,8 @@
 .formCreateTask{
     display: none;
 }
+
+/* Style component Task */
+.container-task{
+    background-color: yellow;
+}

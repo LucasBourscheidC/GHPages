@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import Task from "./Task";
-import Board from "./Board";
+import React, { useState } from 'react'; 
 
 export default function CreateTask(props){
   const [title, setTitle] = useState('');

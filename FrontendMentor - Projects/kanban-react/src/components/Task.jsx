@@ -7,7 +7,7 @@ export default function Task({task}){
     const [category, setCategory] = useState(task.category)
 
     return <>
-        <div>
+        <div draggable className="container-task">
             <p>{id}</p>
             <p>{title}</p>
             <p>{description}</p>
