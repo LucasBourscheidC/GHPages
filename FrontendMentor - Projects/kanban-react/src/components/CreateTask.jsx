@@ -1,6 +1,7 @@
 import React, { useState } from 'react'; 
 
 export default function CreateTask(props){
+  const [id, setId] = useState(0);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
@@ -19,7 +20,9 @@ export default function CreateTask(props){
     console.log('Título:', title);
     console.log('Descrição:', description);
     console.log('Categoria:', category);
+    setId(prev => prev+1);
     const newTask = {
+      id: id,
       title: title,
       description: description,
       category: category,

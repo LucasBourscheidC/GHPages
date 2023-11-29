@@ -59,6 +59,26 @@
     grid-column: 2;
 }
 
+/*Display tasks and board*/
+.container-board{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.container-column{
+    border-style:double ;
+    border-width: 10px;
+    margin: 5vh 0;
+    background-color: grey;
+    width: 25%;
+    text-align: center;
+    padding: 1vh 1vw;
+}
+/* Style component container-Task */
+.container-task{
+    border-radius: 0.4vw;
+    background-color: yellow;
+}
 /*text*/
 
 /* Style form for board name */
@@ -71,7 +91,3 @@
     display: none;
 }
 
-/* Style component Task */
-.container-task{
-    background-color: yellow;
-}

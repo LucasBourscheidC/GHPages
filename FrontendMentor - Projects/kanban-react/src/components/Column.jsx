@@ -1,24 +1,24 @@
 import { useEffect, useState } from "react"
 import Task from "./Task"
 
-export default function Column({state, currentBoard}){
+export default function Column({state, currentBoard, drop, boardList}){
     const [stateColumn, setStateColumn] = useState(state)
-    const [vamola, setvamola] = useState([])
+    const [taskList, setTaskList] = useState([])
     const teste = state
 
     useEffect(()=>{
         if(currentBoard){
-            let TODOsTASKs = currentBoard.taskList.filter((task)=>task.category == teste.toUpperCase())
-            setvamola(TODOsTASKs)
+            let TODOsTASKs = currentBoard.taskList.filter((task)=>task.category.toUpperCase() == teste.toUpperCase())
+            setTaskList(TODOsTASKs)
         }
     }, [currentBoard])
 
     return <>
-        <div>
+        <div ref={drop} className="container-column">
             <h1>{stateColumn}</h1>
             {
-                vamola.length > 0 ? vamola.map((task, index)=>{
-                    return <Task task={task} key={index}/>
+                taskList.length > 0 ? taskList.map((task, index)=>{
+                    return <Task currentBoard={currentBoard} boardList={boardList} task={task} key={index}/>
                 }): null
             }
         </div>

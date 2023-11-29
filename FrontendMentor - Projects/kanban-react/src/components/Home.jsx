@@ -4,6 +4,7 @@ import CreateTask from "./CreateTask.jsx"
 import Task from "./Task.jsx"
 import BoardList from "./BoardList.jsx"
 import Column from "./Column.jsx"
+import { useDrop } from "react-dnd"
 
 export default function Header(){
     //BOARD INFO
@@ -18,13 +19,14 @@ export default function Header(){
             }]
         }
     */
+
     const [boardList, setBoardList] = useState([])
     const [currentBoard, setCurrentBoard] = useState(undefined)
     const [newBoardId, setNewBoardId] = useState(0);
     const [displayFormBoardName, setDisplayFormBoardName] = useState({display: "none"})
     const [displayFormCreateTask, setDisplayFormCreateTask] = useState({display: "none"})
-    const [displayBoard, setDisplayBoard] = useState({display: "none"})
-    const [teste, setteste] = useState({column: {display: "unset"}})
+    const [displayBoard, setDisplayBoard] = useState({visibility: "hidden"})
+    //const [teste, setteste] = useState({column: {display: "unset"}})
     const [selectedOptionForBoard, setSelectedOptionForBoard] = useState(0) // 0 create and 1 change, for board name
     const CREATE_BOARD = 0;
     const CHANGE_BOARD_NAME = 1;
@@ -34,10 +36,75 @@ export default function Header(){
         done: "Done"
     }
 
+    const [{isOverColumnTodo}, todoDrop] =  useDrop(()=>{
+        const newCategory = "Todo";
+        return{
+        accept: "task",
+        drop: (item) => updateTasksInColumns(item, newCategory),
+        collect: (monitor)=>({
+            isOverColumnTodo: !!monitor.isOver(),
+        }),
+    }})
+    const [{isOverColumnDoing}, doingDrop] =  useDrop(()=>{
+        const newCategory = "Doing";
+
+        return{
+        accept: "task",
+        drop: (item) => updateTasksInColumns(item, newCategory),
+        collect: (monitor)=>({
+            isOverColumnDoing: !!monitor.isOver(),
+        }),
+    }})
+    const [{isOverColumnDone}, doneDrop] =  useDrop(()=>{
+        const newCategory = "Done";
+        return{
+        accept: "task",
+        drop: (item) => boardListUpdateForNewTasks(item, newCategory),
+        collect: (monitor)=>({
+            isOverColumnDone: !!monitor.isOver(),
+        }),
+    }})
+    
+    const updateTasksInColumns = (item, newCategory) =>{
+        //console.log(item.boardList)
+        const newTask = {
+            id: item.id,
+            title: item.title,
+            description: item.description,
+            category: newCategory,
+          };
+        taskUpdate(newTask, item.boardList, item.currentBoard)
+    }
     const makeFormCreateTaskVisible = () =>{
         setDisplayFormCreateTask({display: "unset"})
     }
 
+    const taskUpdate = (taskUpdate, boardList, currentBoard)=>{
+        console.log("WATF")
+        const updatedBoardList = boardList.map((board) => {
+            console.log("board")
+            console.log(board)
+            if (board.id === currentBoard.id) {
+                console.log(taskUpdate.id)
+                console.log(taskUpdate.title)
+                console.log(taskUpdate.description)
+                console.log(taskUpdate.category)
+                const updatedBoard = {
+                    ...board,
+                    taskList: board.taskList.map((task)=>
+                        task.id === taskUpdate.id ? {...task, category: taskUpdate.category} : task
+                    ),
+                };
+                console.log("updatedBoard",updatedBoard)
+                setCurrentBoard(updatedBoard);
+                return updatedBoard;
+            }
+            console.log("board", board)
+            return board;
+          });
+          console.log(updatedBoardList)
+          setBoardList(updatedBoardList);
+    }
     const boardListUpdateForNewTasks = (newTask)=>{
         const updatedBoardList = boardList.map((board) => {
             if (board.id === currentBoard.id) {
@@ -109,7 +176,7 @@ export default function Header(){
 
     const unsetCurrentBoard = ()=>{
         setCurrentBoard("")
-        setDisplayBoard({display: "none"})
+        setDisplayBoard({visibility: "unset"})
     }
 
     const handleCreateNewBoard = ()=>{
@@ -119,7 +186,7 @@ export default function Header(){
 
     useEffect(()=>{
         if(currentBoard){
-            setDisplayBoard({display: "flex"})
+            setDisplayBoard({visibility: "unset"})
         }
     }, [currentBoard])
       
@@ -145,19 +212,10 @@ export default function Header(){
     </div>
     
     {/*board tasks*/}
-    <div style={teste.column}>
-        <Column state={"Todo"} currentBoard={currentBoard} />
-        <Column state={"Doing"} currentBoard={currentBoard} />
-        <Column state={"Done"} currentBoard={currentBoard} />
-        {
-            /*
-            currentBoard? currentBoard.taskList.map((task, index)=>{
-                console.log("TASK")
-                console.log(task)
-                return <Task task={task} key={index} />
-            }): <></>*/
-        }
-        <button onClick={null} className="board-button">+New Column</button>
+    <div className="container-board" /*style={teste.column}*/>
+        <Column drop={todoDrop} state={"Todo"} currentBoard={currentBoard} boardList={boardList}/>
+        <Column drop={doingDrop} state={"Doing"} currentBoard={currentBoard} boardList={boardList}/>
+        <Column drop={doneDrop} state={"Done"} currentBoard={currentBoard} boardList={boardList}/>
     </div>
 
     {/*add board name */}

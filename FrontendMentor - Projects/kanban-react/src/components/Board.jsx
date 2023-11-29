@@ -11,7 +11,9 @@ export default function Board({board, setCurrentBoard}){
 
     return<>
         <div> 
-            <button onClick={()=>setCurrentBoard(board)}>{name}</button>
+            <button onClick={()=>{
+                console.log(board)
+                setCurrentBoard(board)}}>{name}</button>
         </div>
     </>
 }

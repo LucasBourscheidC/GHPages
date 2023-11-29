@@ -1,16 +1,18 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import Home from './components/Home'
 import "./styles/style.css"
 import { Routes } from 'react-router-dom'
+import {DndProvider} from "react-dnd"
+import {HTML5Backend} from "react-dnd-html5-backend"
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <DndProvider backend={HTML5Backend}>
         <Home />
+      </DndProvider>
     </> 
   )
 }
