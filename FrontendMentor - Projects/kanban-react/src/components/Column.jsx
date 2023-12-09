@@ -17,7 +17,7 @@ export default function Column({state, currentBoard, drop, boardList}){
         <div ref={drop} className="container-column">
             <h1>{stateColumn}</h1>
             {
-                taskList.length > 0 ? taskList.map((task, index)=>{
+                taskList.length > 0  && currentBoard ? taskList.map((task, index)=>{
                     return <Task currentBoard={currentBoard} boardList={boardList} task={task} key={index}/>
                 }): null
             }

@@ -66,7 +66,6 @@ export default function Header(){
     }})
     
     const updateTasksInColumns = (item, newCategory) =>{
-        //console.log(item.boardList)
         const newTask = {
             id: item.id,
             title: item.title,
@@ -79,32 +78,24 @@ export default function Header(){
         setDisplayFormCreateTask({display: "unset"})
     }
 
-    const taskUpdate = (taskUpdate, boardList, currentBoard)=>{
-        console.log("WATF")
+    const taskUpdate = (taskUpdate, boardList, currentBoard) => {
         const updatedBoardList = boardList.map((board) => {
-            console.log("board")
-            console.log(board)
-            if (board.id === currentBoard.id) {
-                console.log(taskUpdate.id)
-                console.log(taskUpdate.title)
-                console.log(taskUpdate.description)
-                console.log(taskUpdate.category)
-                const updatedBoard = {
-                    ...board,
-                    taskList: board.taskList.map((task)=>
-                        task.id === taskUpdate.id ? {...task, category: taskUpdate.category} : task
-                    ),
-                };
-                console.log("updatedBoard",updatedBoard)
-                setCurrentBoard(updatedBoard);
-                return updatedBoard;
-            }
-            console.log("board", board)
-            return board;
-          });
-          console.log(updatedBoardList)
-          setBoardList(updatedBoardList);
-    }
+          if (board.id === currentBoard.id) {
+            const updatedBoard = {
+              ...board,
+              taskList: board.taskList.map((task) =>
+                task.id === taskUpdate.id ? taskUpdate : task
+              ),
+            };
+            setCurrentBoard(updatedBoard);
+            console.log(updatedBoard)
+            return updatedBoard;
+          }
+          return board;
+        });
+        setBoardList(updatedBoardList);
+      };
+      
     const boardListUpdateForNewTasks = (newTask)=>{
         const updatedBoardList = boardList.map((board) => {
             if (board.id === currentBoard.id) {
