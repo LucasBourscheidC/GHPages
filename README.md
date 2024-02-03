@@ -1,6 +1,7 @@
 # About
 ---
 Projects build with designs provided by frontendmentor to improve frontend skills
+<br/>
 [FrontEnd Mentor Profile](https://www.frontendmentor.io/profile/ValafarL)
 
 ## All projects can be seen below, all of them are FrontEnd only:
