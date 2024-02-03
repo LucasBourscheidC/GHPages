@@ -1,6 +1,7 @@
 # About
 ---
 Projects build with designs provided by frontendmentor to improve frontend skills
+[FrontEnd Mentor Profile](https://www.frontendmentor.io/profile/ValafarL)
 
 ## All projects can be seen below, all of them are FrontEnd only:
 - [Space Tourism - multipage](https://frontend-mentor-projects-rouge.vercel.app/)
@@ -17,4 +18,3 @@ Projects build with designs provided by frontendmentor to improve frontend skill
 - [social proof](https://valafarl.github.io/FrontendMentor---Projects/social-proof-section-master)
 - [Stats preview](https://valafarl.github.io/FrontendMentor---Projects/stats-preview-card-component-main)
 ---
-[My profile on Frontend Mentor](https://www.frontendmentor.io/profile/ValafarL)
